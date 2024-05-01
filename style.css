@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+
+:root {
+    --navigation-height: 5rem;
+    --header-height: 0rem;
+    --body-color: rgb(219, 219, 219);
+}
+
+*:not(i, svg, img) {
+    font-family: "Poppins", sans-serif;
+}
+
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(141, 141, 141, 0.3);
+    background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(141, 141, 141, 0.3);
+}
+
+body {
+    background-color: var(--body-color)
+}
+
+main {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+.head {
+    width: 100%;
+    height: var(--header-height);
+}
+
+.pages {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - (var(--navigation-height) + var(--header-height)));
+    background-color: white;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 5px rgb(0, 0, 0, .25);
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+main.pages>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.1;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pages h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.navigation {
+    /* border-left: 1px solid; */
+    /* border-right: 1px solid; */
+    height: var(--navigation-height);
+}
+
+.navigation div {
+    height: var(--navigation-height);
+}
+
+.page-item {
+    cursor: pointer;
+    display: block;
+    /* border-right: 1px solid rgb(0, 0, 0, .5); */
+    /* border-top: 1px solid rgb(0, 0, 0, .5); */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+
+    font-weight: bold;
+    font-size: 1.05rem;
+    background-color: transparent;
+}
+
+.page-item.active {
+    /* background-color: #BF4200; */
+    background-color: white;
+    border-top: none;
+    color: black;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+.page-content {
+    padding: 1rem;
+}
+
+.page-content p {
+    font-size: 1.15rem;
+    /* text-align: center; */
+}
+
+.centered-area {
+    align-items: center;
+}
+
+.page-content-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.page-content-item>div {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.page-content-item img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.full-width {
+    width: 100%;
+    display: flex;
+}
+
+.full-width img {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+}
+
+.page-content-item>div>div {
+    padding: 1rem;
+}
+
+
+
+
+/* Page 2 */
+
+.r-prived {
+    display: flex;
+    align-items: center;
+}
+
+.r-item.r-prived img {
+    width: 35rem;
+    /* width: 100%; */
+    padding: 1rem;
+}
+
+
+.r-items,
+.r-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.r-layout>div:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.r-item {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.r-item img {
+    width: 35rem;
+    height: auto;
+    padding: 1rem;
+    object-fit: scale-down;
+}
+
+.r-item p {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+    .r-item {
+        flex-direction: column !important;
+    }
+}
+
+/* 
+.r-layout{
+    display: flex;
+}
+
+.r-layout > div:first-child{
+    width: 20rem;
+} */
+
+
+.overview-flex {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.overview-flex>div {
+    width: 50%;
+}
+
+.overview-flex h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.overview-flex ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+}
+
+
+
+
+/* Page 3 */
+
+.images-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.images-flex .image-item {
+    display: block;
+    width: calc(50% - .5rem);
+    height: calc((100vh - (var(--navigation-height) + var(--header-height) + 3rem)) / 2);
+    cursor: pointer;
+}
+
+.images-flex .image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-content-item {
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 1rem 1rem 1rem;
+    top: 0;
+    left: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.image-content-item button {
+    position: fixed;
+    top: 1rem;
+    /* right: 1rem; */
+    border-radius: 50%;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: none;
+    box-shadow: 0 0 5px rgb(0, 0, 0, .25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+}
+
+.swiper.mySwiper {
+    border-top: .20rem solid var(--body-color);
+}
+
+
+
+.page-content-item>.p1-item:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 1400px) {
+    .page-content-item>.p1-item {
+        flex-direction: column !important;
+        text-align: center;
+    }
+}
+
+.p2-content {
+    text-align: center;
+}
+
+.p2-image-area {
+    display: flex;
+}
+
+.p2-image-area>div {
+    width: 50%;
+    height: 35rem;
+}
+
+.p2-image-area img {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    object-fit: cover;
+}
+
+.p2-content .counters-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    background-color: #a43900;
+    color: white;
+
+}
+
+.p2-content .counters-area>div {
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.p2-content .counters-area h3 {
+    font-size: 1.75rem;
+    font-style: normal;
+    font-family: "Saira Stencil One", sans-serif;
+}
+
+.p2-content .counters-area h4 {
+    font-size: 3.25rem;
+    font-style: normal;
+    font-family: "Saira Stencil One", sans-serif;
+    font-weight: 300;
+}
+
+@media (max-width: 1200px) {
+    .p2-content .counters-area {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.adding-list-area h3 {
+    text-align: start;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.adding-list-area ul {
+    font-size: 1.1rem;
+}
+
+.page-content-item img:not(.full-width img) {
+    max-width: 37rem;
+}
+
+.s-module img {
+    height: 33.5rem;
+}
+
+.s-module p {
+    font-size: 1.15rem;
+}
